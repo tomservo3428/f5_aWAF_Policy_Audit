@@ -140,8 +140,7 @@ def policy_export_filename(full_path: str, export_format: str = "xml") -> str:
     """
     clean = full_path.lstrip('/')
     sanitized = sanitize_filename(clean.replace('/', '_'))
-    ts = datetime.now().strftime("%Y%m%dT%H%M")
-    return f"WAF_{sanitized}_{ts}.{export_format}"
+    return f"WAF_{sanitized}.{export_format}"
 
 
 # ── Misc helpers ───────────────────────────────────────────────────────────────
@@ -166,7 +165,7 @@ def normalize_full_path(path: str, partition: str = "Common") -> str:
 
 
 def iso_timestamp() -> str:
-    return datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+    return datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def human_bool(value) -> str:
