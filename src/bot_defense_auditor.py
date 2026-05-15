@@ -63,7 +63,7 @@ class BotDefenseAuditor:
         partitions: Optional[List[str]] = None,
     ):
         self.client = client
-        self.fetch_dir = ensure_dir(Path(output_dir) / "bot-defense")
+        self.fetch_dir = ensure_dir(Path(output_dir) / "exports")
         self.filter_partitions = [p.strip() for p in partitions] if partitions else []
         self.log = get_logger("bot_defense_auditor")
 
